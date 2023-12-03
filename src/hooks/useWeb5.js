@@ -12,9 +12,14 @@ export function useWeb5Hook() {
 
   useEffect(() => {
     async function connectWeb5() {
-        const { web5, did: userDid } = await Web5.connect({  sync: '5s'});
+      try {
+        const { web5, did: userDid } = await Web5.connect({ sync: '5s'});
         setWeb5(web5);
         setDid(userDid);
+      }
+      catch(err) {
+        console.log(err);
+      }
     }
     connectWeb5();
    

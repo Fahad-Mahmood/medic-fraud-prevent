@@ -1,9 +1,9 @@
 const prescriptionProtocolDefinition = {
-    protocol: "https://example.com/protocol/med2xc3wew32",
+    protocol: "https://656ce7a72b027400084b380b--hilarious-meerkat-30b6c6.netlify.app/api/protocol/prescription",
     published: true,
     types: {
       prescription: {
-        schema: "https://f7c8-103-159-75-74.ngrok-free.app/api/prescription",
+        schema: "https://656ce7a72b027400084b380b--hilarious-meerkat-30b6c6.netlify.app/api/prescription",
         dataFormats: ["application/json"],
       },
     },
