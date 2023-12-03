@@ -1,0 +1,37 @@
+{
+  "name": "web5med",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 8080",
+    "build": "next build",
+    "start": "next start -p 8080",
+    "lint": "next lint",
+    "test": "playwright test",
+    "test:browser": "start-server-and-test dev http://localhost:8080 test"
+  },
+  "dependencies": {
+    "@mantine/core": "7.2.2",
+    "@mantine/dates": "^7.2.2",
+    "@mantine/form": "^7.2.2",
+    "@mantine/hooks": "7.2.2",
+    "@mantine/notifications": "^7.2.2",
+    "@tabler/icons-react": "^2.42.0",
+    "@web5/api": "0.8.2",
+    "crypto-browserify": "3.12.0",
+    "dayjs": "^1.11.10",
+    "next": "13.5.4",
+    "process": "0.11.10",
+    "react": "18",
+    "react-dom": "18",
+    "react-qr-code": "^2.0.12",
+    "stream-browserify": "3.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "postcss-preset-mantine": "^1.11.0",
+    "postcss-simple-vars": "^7.0.1",
+    "tailwindcss": "^3.3.5"
+  }
+}

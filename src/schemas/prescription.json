@@ -1,0 +1,36 @@
+{
+    "$id": "https://example.com/schemas/medmmmmmpsddssddsdssddsrescription.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "name": "Prescription",
+    "type": "object",
+    "properties": {
+     "patientName": {
+        "type": "string"
+      },
+      "patientDid": {
+        "type": "string"
+      },
+      "dosageName": {
+        "type": "string"
+      },
+      "dosagePerDay": {
+        "type": "string"
+      },
+      "dosageAmount": {
+        "type": "string"
+      },
+      "duration": {
+        "type": "string"
+      },
+      "notes": {
+        "type": "string"
+      },
+      "doctorName": {
+        "type": "string"
+      },
+      "doctorDid": {
+        "type": "string"
+      }
+    },
+    "required": ["patientName"]
+  }
