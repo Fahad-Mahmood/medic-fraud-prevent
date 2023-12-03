@@ -61,7 +61,7 @@ const onShare = async () => {
   const patientData = { patientDid: did, firstName: patientProfile.data.firstName, lastName: patientProfile.data.lastName, dob: patientProfile.data.dob, gender: patientProfile.data.gender };
  console.log(patientData, "recipient", doctorDid )
   const { record, status }  = await web5.dwn.records.create({
-      data: JSON.stringify(patientData),
+      data: patientData,
       store: false,
       message: {
           protocol: patientProtocolDefinition.protocol,
