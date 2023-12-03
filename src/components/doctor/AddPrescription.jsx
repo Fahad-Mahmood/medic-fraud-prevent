@@ -31,6 +31,7 @@ export default function AddPrescription() {
       });
 console.log(isProtocolConfigured);
     const onSubmit =  async(values) => {
+        try {
         if(!isProtocolConfigured) {
             notifications.show({ message: 'Please wait! Configuring Protocol' });
             return;
@@ -43,7 +44,7 @@ console.log(isProtocolConfigured);
                 protocolPath: 'prescription',
                 schema: prescriptionProtocolDefinition.types.prescription.schema,
                 dataFormat: prescriptionProtocolDefinition.types.prescription.dataFormats[0],
-                recipient: values.patientDID,
+                recipient: values.patientDid,
             }
         });
         console.log(record, status);
@@ -64,6 +65,10 @@ console.log(isProtocolConfigured);
         notifications.show({ message: 'New Prescription Created' });
         form.reset();
         close();
+    }
+    catch(err) {
+        console.log('Error adding new prescription', err);
+    }
     }
 
     return (

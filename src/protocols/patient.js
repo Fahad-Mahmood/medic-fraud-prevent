@@ -1,14 +1,14 @@
-const prescriptionProtocolDefinition = {
-    protocol: "https://bc15-103-159-75-74.ngrok-free.app/api/v11/protocol/prescription",
+const patientProtocolDefinition = {
+    protocol: "https://bc15-103-159-75-74.ngrok-free.app/api/v11/protocol/patient",
     published: true,
     types: {
-      prescription: {
-        schema: "https://bc15-103-159-75-74.ngrok-free.app/api/prescription",
+      patient: {
+        schema: "https://bc15-103-159-75-74.ngrok-free.app/api/patient",
         dataFormats: ["application/json"],
       },
     },
     structure: {
-      prescription: {
+      patient: {
         $actions: [
           { who: "anyone", can: "read"},
           { who: "anyone", can: "write"},
@@ -17,14 +17,14 @@ const prescriptionProtocolDefinition = {
     }
 }
 
-const configurePrescriptionProtocol = async (web5, did) => {
+const configurePatientProtocol = async (web5, did) => {
   try {
     
     // query the list of existing protocols on the DWN
     const { protocols, status } = await web5.dwn.protocols.query({
         message: {
             filter: {
-                protocol: prescriptionProtocolDefinition.protocol,
+                protocol: patientProtocolDefinition.protocol,
             }
         }
     });
@@ -45,7 +45,7 @@ const configurePrescriptionProtocol = async (web5, did) => {
     // configure protocol on local DWN
     const { status: configureStatus, protocol } = await web5.dwn.protocols.configure({
         message: {
-            definition: prescriptionProtocolDefinition,
+            definition: patientProtocolDefinition,
         }
     });
 
@@ -61,4 +61,4 @@ const configurePrescriptionProtocol = async (web5, did) => {
     }
 }
 
-export { prescriptionProtocolDefinition, configurePrescriptionProtocol};
+export { patientProtocolDefinition, configurePatientProtocol};

@@ -11,6 +11,7 @@ export default function DoctorHome() {
   const [doctorProfile, setDoctorProfile] = useState(null);
   const [isFetching, setIsFetching] = useState(true);
 
+
   useEffect(() => {
     const fetchDoctorProfile = async () => {
         console.log('fetching doctor profile');

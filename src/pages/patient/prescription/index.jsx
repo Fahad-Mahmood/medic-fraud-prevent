@@ -1,5 +1,5 @@
 import { Flex, Title } from "@mantine/core";
-import Prescriptions from "@/components/doctor/Prescriptions";
+import PatientPrescriptions from "@/components/patient/PatientPrescriptions";
 
 import PatientLayout from "@/layouts/patientLayout";
 
@@ -11,7 +11,7 @@ export default function PatientPrescription() {
         >
             <Title order={4}>My Prescriptions</Title>
           </Flex>
-          <Prescriptions />
+          <PatientPrescriptions />
         </PatientLayout>
     );
   }
