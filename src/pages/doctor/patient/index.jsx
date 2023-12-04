@@ -6,6 +6,7 @@ import DoctorLayout from "@/layouts/doctorLayout";
 import { patientProtocolDefinition } from "@/protocols/patient";
 import { useWeb5Hook } from "@/hooks/useWeb5";
 import { Web5Context } from "@/providers/web5Provider";
+import Patients from '@/components/doctor/Patients';
 
 
 export default function PatientHome() {
@@ -52,6 +53,7 @@ export default function PatientHome() {
             <Title order={4}>My Patients</Title>
             <AddPatient />
           </Flex>
+          <Patients />
         </DoctorLayout>
     );
   }

@@ -29,7 +29,7 @@ export default function PatientPrescriptions() {
                 }
             });
             console.log('result', records);
-            const savedPrescriptionsList = [];
+            const savedPrescriptionsList = [{id: '1', data: {dosageName: 'Paracetamol 10mg', dosagePerDay: '3' ,dosageAmount: '2 tablets', duration: '3', notes: 'minor cough', date: "3/12/2023"}}];
             for (let record of records) {
                 const data = await record.data.json();
                 const savedPrescription = {record, data, id: record.id};
@@ -54,14 +54,11 @@ export default function PatientPrescriptions() {
               <Table.Td>{prescription.data.dosagePerDay}</Table.Td>
               <Table.Td>{prescription.data.dosageAmount}</Table.Td>
               <Table.Td>{prescription.data.duration}</Table.Td>
-              <Table.Td>{prescription.data.duration}</Table.Td>
-              <Table.Td>{prescription.data.patientName}</Table.Td>
+              <Table.Td>{prescription.data.date}</Table.Td>
+
               <Table.Td> 
                 <ActionIcon variant="filled" color="gray"  aria-label="Settings">
                     <IconPrinter style={{ width: '70%', height: '70%' }} stroke={1.5} />
-                </ActionIcon>
-                <ActionIcon className='ml-2' variant="filled" aria-label="Settings">
-                    <IconEdit style={{ width: '70%', height: '70%' }} stroke={1.5} />
                 </ActionIcon>
               </Table.Td>
             </Table.Tr>
@@ -80,7 +77,6 @@ export default function PatientPrescriptions() {
                     <TableTh>Dosage Amount</TableTh>
                     <TableTh>Duration in Days</TableTh>
                     <TableTh>Prescription Date</TableTh>
-                    <TableTh>Patient Name</TableTh>
                     <TableTh>Actions</TableTh>
                 </TableTr>
             </TableThead>
